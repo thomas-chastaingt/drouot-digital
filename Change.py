@@ -2,7 +2,7 @@ coins_values = [5,10,50,100]
 itemValue = 275
 paidValue = 300
 
-def Change(itemValue, paidValue, coins_values):
+def change(itemValue, paidValue, coins_values):
     map = {}
     render = paidValue - itemValue
 
@@ -20,4 +20,4 @@ def Change(itemValue, paidValue, coins_values):
             render -= val
     print(map)
 
-Change(itemValue, paidValue, coins_values)
+change(itemValue, paidValue, coins_values)
