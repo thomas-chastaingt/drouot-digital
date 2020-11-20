@@ -2,11 +2,11 @@ coins_values = [5,10,50,100]
 itemValue = 275
 paidValue = 300
 
+#define the method to change coins
 def change(itemValue, paidValue, coins_values):
     map = {}
     render = paidValue - itemValue
 
-    #add every items in map form coins_values
     for c in coins_values:
         map.update({c : 0})
 
@@ -19,5 +19,6 @@ def change(itemValue, paidValue, coins_values):
             map[val] += 1
             render -= val
     print(map)
+    return map
 
 change(itemValue, paidValue, coins_values)
