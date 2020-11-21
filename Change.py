@@ -1,4 +1,4 @@
-coins_values = [5,10,50,100]
+coins_values = [1 ,2 ,5 ,10, 20, 50 ,100]
 itemValue = 275
 paidValue = 300
 
