@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Node {
+            constructor(id, data){
+                this.id = id;
+                this.data = data;
+                this.children = [];
+            }
+        }
+
+        node_id = 1;
+        node_1 = new Node(1, 5);
+        node_2 = new Node(1, 10);
+        node_3 = new Node(1, 60);
+        node_4 = new Node(1, 10);
+        node_5 = new Node(1, 5);
+
+
+        node_1.children = [node_2, node_3];
+        node_3 = [node_5];
+        node_5 = [node_5];
+
+        nodes = [node_1, node_2, node_3, node_4, node_5];
+
+        function ft_recur(childrens){
+            var result = 0;
+            for (var i = 0; i < childrens.length; i++) {
+                result += childrens[i].data;
+                if(childrens[i].children != null) {
+                    ft_recur(childrens[i].children);
+                }
+            }
+            return result;
+        }
+
+
+        function ft_aggregated_weight(nodes, node_id){
+            var result = 0;
+            for(var i = 0; i < nodes.length; i++){
+                if(nodes[i].id == node_id){
+                    result += nodes[i].data;
+                    if (nodes[i].children != null) {
+                        result += ft_recur(nodes[i].children);
+                    }
+                }
+            }
+            console.log(result);
+        }
+
+        ft_aggregated_weight(nodes, node_id);
+    </script>
+</body>
+</html>

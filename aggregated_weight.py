@@ -22,7 +22,6 @@ node_5.children = [node_5]
 
 #nodes is the list of node
 nodes = [node_1, node_2, node_3, node_4, node_5]
-result = 0
 
 
 def ft_recur(childrens):
@@ -36,7 +35,7 @@ def ft_recur(childrens):
     
                     
 #define the method which permits to return the root value and childrens value
-def aggregated_weight(nodes, node_id):
+def ft_aggregated_weight(nodes, node_id):
     result = 0
     for node in nodes:
         if node.id == node_id:
@@ -47,4 +46,4 @@ def aggregated_weight(nodes, node_id):
     return result
     
 
-aggregated_weight(nodes, node_id)
+ft_aggregated_weight(nodes, node_id)
